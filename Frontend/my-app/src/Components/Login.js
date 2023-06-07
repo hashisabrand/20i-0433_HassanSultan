@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -70,7 +71,22 @@ c29 28 56 49 60 45 4 -4 -17 -31 -45 -60 l-52 -53 45 -44 c24 -24 46 -42 48
 <h1 className="mt-3 display-4">Welcome to the <span className="text-primary">Houzz!</span></h1>
 
 
+
     <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-5">
+        <div className="container">
+          <Link className="navbar-brand" to="/Houzz">
+            Houzz
+          </Link>
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/Houzz">
+                About
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card card-body bg-light border-0 shadow-sm">

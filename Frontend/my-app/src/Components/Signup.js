@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +13,7 @@ const Signup = () => {
     password: '',
   });
   const [error, setError] = useState('');
-
+  const navigate = useNavigate()
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -34,6 +36,7 @@ const Signup = () => {
       .then((response) => {
         // Handle successful signup
         console.log(response.data);
+        navigate('/login')
       })
       .catch((error) => {
         // Handle signup error
@@ -68,6 +71,20 @@ c29 28 56 49 60 45 4 -4 -17 -31 -45 -60 l-52 -53 45 -44 c24 -24 46 -42 48
 
 
     <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-5">
+        <div className="container">
+          <Link className="navbar-brand" to="/Houzz">
+            Houzz
+          </Link>
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/Houzz">
+                About
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <h2>Signup</h2>
       {error && <div className="alert alert-danger">{error}</div>}
       <form onSubmit={handleSubmit}>

@@ -63,8 +63,7 @@ const ViewHousingScheme = () => {
             <div key={housingSchemes._id} className="col-lg-4 mb-4">
               <div className="card">
                 <div className="card-body">
-                  <img src={`http://localhost:3000/getfile?file=${encodeURIComponent(housingScheme.file)}`}
- />
+     
                   <h5 className="card-title">{housingScheme.Title} </h5>
                   <p className="card-text">{housingScheme.description}</p>
                   <p className="card-text">{housingScheme.City}</p>
@@ -74,6 +73,9 @@ const ViewHousingScheme = () => {
             </div>
           ))}
         </div>
+
+
+        
       </div>
     
   );

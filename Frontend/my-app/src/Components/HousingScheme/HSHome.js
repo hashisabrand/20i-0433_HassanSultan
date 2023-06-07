@@ -1,30 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchHousingScheme from './SearchHS';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Agent() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [agents, setAgents] = useState([]);
-
-  const handleSearch = () => {
-    // Perform search logic here based on the searchQuery
-    // Update the agents state with the search results
-  };
-
-  useEffect(() => {
-    async function fetchAgents() {
-      try {
-        const response = await axios.get('http://localhost:3000/clientagent/getAllAgent');
-        setAgents(response.data.Agents);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    fetchAgents();
-  }, []);
-
+function HSHome() {
   return (
     <div className="container-fluid text-center home-page">
       <div className="background-image"></div>
@@ -56,25 +35,26 @@ function Agent() {
           </ul>
         </div>
       </nav>
-
       
 
-        <div className="row mt-5">
-          {agents.map((agent) => (
-            <div key={agent._id} className="col-lg-4 mb-4">
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">{agent.fname} {agent.lname}</h5>
-                  <p className="card-text">{agent.description}</p>
-                  <Link to={`/agents/${agent._id}`} className="btn btn-primary">View Agent</Link>
-                </div>
-              </div>
-            </div>
-          ))}
+      <SearchHousingScheme/>
+
+
+      <div className="mt-5">
+        <div className="card">
+        <div className="card bg-info text-black">
+          <div className="card-body" >
+            <h5 className="card-title">All Agents</h5>
+            <p className="card-text">Click the button below to view agents.</p>
+            <Link to="/ViewAgent" className="btn btn-primary">View Agents</Link>
+          </div>
         </div>
       </div>
+    </div>
+    </div>
+
     
   );
 }
 
-export default Agent;
+export default HSHome;

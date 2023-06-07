@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 function HomePage() {
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(localStorage.getItem('token')===null){navigate("/Login")}
+  },[])
+
+
   return (
     <div className="container-fluid text-center home-page">
       <div className="background-image"></div>
@@ -41,7 +49,12 @@ c29 28 56 49 60 45 4 -4 -17 -31 -45 -60 l-52 -53 45 -44 c24 -24 46 -42 48
           </ul>
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/login" > <span className="text-danger">Logout!</span></Link>
+              <button className="btn btn-danger"
+              onClick={()=>{
+                localStorage.clear()
+                navigate("/login")
+              }}
+              >Logout!</button>
             </li>
           </ul>
         </div>
@@ -64,7 +77,7 @@ c29 28 56 49 60 45 4 -4 -17 -31 -45 -60 l-52 -53 45 -44 c24 -24 46 -42 48
             <div className="card-body">
               <h5 className="card-title">Houzz Properties</h5>
               <p className="card-text">Explore and manage properties.</p>
-              <Link to="/properties" className="btn btn-light">Go to Property Panel</Link>
+              <Link to="/PHome" className="btn btn-light">Go to Property Panel</Link>
             </div>
           </div>
         </div>
@@ -73,7 +86,7 @@ c29 28 56 49 60 45 4 -4 -17 -31 -45 -60 l-52 -53 45 -44 c24 -24 46 -42 48
             <div className="card-body">
               <h5 className="card-title">Houzz Housing Schemes</h5>
               <p className="card-text">View and manage housing schemes.</p>
-              <Link to="/housing-schemes" className="btn btn-light">Go to Housing Scheme Panel</Link>
+              <Link to="/HSHome" className="btn btn-light">Go to Housing Scheme Panel</Link>
             </div>
           </div>
         </div>

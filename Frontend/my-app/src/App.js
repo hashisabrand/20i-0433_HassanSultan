@@ -12,6 +12,7 @@ import AgentSearch from './Components/Agents/SearchAgent';
 import AgentView from './Components/Agents/ViewAgent';
 import Agent from './Components/Agents/Agenthome';
 import HSHome from './Components/HousingScheme/HSHome';
+import PHome from './Components/Properties/PHome';
 const App = () => {
   return (
     <Router>
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/Home" element={<HomePage />} />
           <Route path="/AgentHome" element={<Agent />} />
           <Route path="/HSHome" element={<HSHome />} />
+          <Route path="/PHome" element={<PHome/>} />
 
 
  

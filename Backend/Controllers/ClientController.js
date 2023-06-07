@@ -21,6 +21,20 @@ let signup = (req, res) => {
       res.status(400).json({ error: err, message: "Client not Created" });
     });
 };
+let getByEmailClient = (req, res) => {
+
+  let {email} = req.body;
+  console.log(email)
+  let filter = {email: email};
+
+  Client.find(filter)
+  .then(Client => {
+      res.status(200).json({ Success: true, Message: "Succefully got agent", Client:Client });
+  })
+  .catch(err => {
+      res.status(400).json({ Success: false, Message: "Could not get agent",err:err });
+  })
+}
 
 
 let updateclient = (req, res) => {
@@ -31,6 +45,10 @@ let updateclient = (req, res) => {
     address: address,
     contactNo: contactNo,
   };
+
+
+ 
+
 
   Client.updateOne(filter, update)
     .then((client) => {
@@ -71,5 +89,6 @@ let login = (req, res) => {
 module.exports = {
   signup,
   login,
+  getByEmailClient,
   updateclient,
 };

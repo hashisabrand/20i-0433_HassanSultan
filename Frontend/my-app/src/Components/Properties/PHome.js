@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchHousingScheme from './SearchHS';
+import SearchProperty from './SearchProperty';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function HSHome() {
+function PHome() {
   return (
     <div className="container-fluid text-center home-page">
       <div className="background-image"></div>
@@ -37,16 +37,16 @@ function HSHome() {
       </nav>
       
 
-      <SearchHousingScheme/>
+      <SearchProperty/>
 
 
       <div className="mt-5">
         <div className="card">
         <div className="card bg-secondary text-black">
           <div className="card-body" >
-            <h5 className="card-title">All HousingScheme</h5>
-            <p className="card-text">Click the button below to view HousingScheme Projects.</p>
-            <Link to="/ViewHousingScheme" className="btn btn-primary">View Projects</Link>
+            <h5 className="card-title">All Properties</h5>
+            <p className="card-text">Click the button below to view Properties.</p>
+            <Link to="/ViewProperty" className="btn btn-primary">View Properties</Link>
           </div>
         </div>
       </div>
@@ -57,4 +57,4 @@ function HSHome() {
   );
 }
 
-export default HSHome;
+export default PHome;

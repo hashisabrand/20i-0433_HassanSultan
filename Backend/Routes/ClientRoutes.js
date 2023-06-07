@@ -1,3 +1,4 @@
+const {verifyuserloggedIn} = require('../authentication')
 const {
   signup,
   login,
@@ -7,7 +8,7 @@ const ClientRouter = require("express").Router();
 
 ClientRouter.post("/signup", signup);
 ClientRouter.post("/login", login);
-ClientRouter.post("/update", updateclient);
+ClientRouter.post("/update", verifyuserloggedIn,updateclient);
 module.exports = ClientRouter;
 // {
    

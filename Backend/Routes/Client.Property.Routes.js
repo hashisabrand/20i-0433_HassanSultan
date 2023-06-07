@@ -5,7 +5,7 @@ const ClientPropertyRouter = require("express").Router();
 
 ClientPropertyRouter.get("/getAllProperty", getAllProperty);
 
-ClientPropertyRouter.post("/getByNameProperty", getByNameProperty);
+ClientPropertyRouter.post("/getByNameProperty",getByNameProperty);
 
 module.exports = ClientPropertyRouter;
 

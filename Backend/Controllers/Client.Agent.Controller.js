@@ -26,10 +26,25 @@ let getByNameAgent = (req, res) => {
 }
 
 
+let getByIDAgent = (req, res) => {
+
+    let {id} = req.body;
+
+    let filter = {id: id};
+
+    AgentModel.find(filter)
+    .then(agent => {
+        res.status(200).json({ Success: true, Message: "Succefully got agent", agent:agent });
+    })
+    .catch(err => {
+        res.status(400).json({ Success: false, Message: "Could not get agent",err:err });
+    })
+}
 
 
 
 module.exports = {
     getAllAgent,
     getByNameAgent,
+    getByIDAgent
 }

@@ -5,6 +5,8 @@ import Login from './Components/Login';
 import UpdateClientForm from './Components/UpdateClientInfo';
 import SearchHousingScheme from './Components/HousingScheme/SearchHS';
 import ViewHousingScheme from './Components/HousingScheme/ViewHS';
+import SearchProperty from './Components/Properties/SearchProperty';
+import ViewProperty from './Components/Properties/ViewProperty';
 const App = () => {
   return (
     <Router>
@@ -15,6 +17,9 @@ const App = () => {
           <Route path="/profile" element={<UpdateClientForm />} />
           <Route path="/SearchHousingScheme" element={<SearchHousingScheme />} />
           <Route path="/ViewHousingScheme" element={<ViewHousingScheme />} />
+          <Route path="/SearchProperty" element={<SearchProperty />} />
+          <Route path="/ViewProperty" element={<ViewProperty />} />
+          
  
         </Routes>
       </div>

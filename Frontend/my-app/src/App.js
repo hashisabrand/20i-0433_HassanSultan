@@ -7,6 +7,8 @@ import SearchHousingScheme from './Components/HousingScheme/SearchHS';
 import ViewHousingScheme from './Components/HousingScheme/ViewHS';
 import SearchProperty from './Components/Properties/SearchProperty';
 import ViewProperty from './Components/Properties/ViewProperty';
+import AgentSearch from './Components/Agents/SearchAgent';
+import AgentView from './Components/Agents/ViewAgent';
 const App = () => {
   return (
     <Router>
@@ -19,6 +21,8 @@ const App = () => {
           <Route path="/ViewHousingScheme" element={<ViewHousingScheme />} />
           <Route path="/SearchProperty" element={<SearchProperty />} />
           <Route path="/ViewProperty" element={<ViewProperty />} />
+          <Route path="/SearchAgent" element={<AgentSearch />} />
+          <Route path="/ViewAgent" element={<AgentView />} />
           
  
         </Routes>

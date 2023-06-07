@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import homeImage from './images/home-image.jpg';
+import './App.css';
 
-function HomePage() {
+// Import image from public folder
+import backgroundImage from './background.jpg';
+
+function Houzz() {
   return (
     <div className="container-fluid text-center home-page">
-      <div className="background-image">
-        <img src={homeImage} alt="Home" className="img-fluid" />
-      </div>
+
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
@@ -23,24 +24,35 @@ function HomePage() {
         Welcome to the <span className="text-primary">Houzz!</span>
       </h1>
 
+      <div className="mt-5">
+        <div className="card">
+          <div className="card-body">
+            <h5 className="card-title">Sign Up</h5>
+            <p className="card-text">Create a new account.</p>
+            <Link to="/signup" className="btn btn-primary">
+              Sign Up
+            </Link>
+          </div>
+        </div>
+        <div className="card mt-3">
+          <div className="card-body">
+            <h5 className="card-title">Sign In</h5>
+            <p className="card-text">Already have an account? Sign in.</p>
+            <Link to="/login" className="btn btn-primary">
+              Sign In
+            </Link>
+          </div>
+        </div>
+      </div>
+
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark mt-5">
         <div className="container">
-          <Link className="navbar-brand" to="/home">
+          <Link className="navbar-brand" to="/Houzz">
             Houzz
           </Link>
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/signup">
-                Signup
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/signin">
-                Signin
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <Link className="nav-link" to="/Houzz">
                 About
               </Link>
             </li>
@@ -51,4 +63,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Houzz;

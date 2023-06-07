@@ -103,7 +103,12 @@ c29 28 56 49 60 45 4 -4 -17 -31 -45 -60 l-52 -53 45 -44 c24 -24 46 -42 48
             </div>
 
             <div className="text-center">
-              <button className="btn btn-primary" type="submit">Login</button>
+              <button className="btn btn-primary" type="submit"
+                  onClick={()=>{
+                    navigate("/Home")
+                  }}
+              >Login</button>
+           
             </div>
           </form>
         </div>

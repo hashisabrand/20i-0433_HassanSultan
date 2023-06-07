@@ -13,6 +13,7 @@ import AgentView from './Components/Agents/ViewAgent';
 import Agent from './Components/Agents/Agenthome';
 import HSHome from './Components/HousingScheme/HSHome';
 import PHome from './Components/Properties/PHome';
+import Houzz from './Houzz';
 const App = () => {
   return (
     <Router>
@@ -31,6 +32,8 @@ const App = () => {
           <Route path="/AgentHome" element={<Agent />} />
           <Route path="/HSHome" element={<HSHome />} />
           <Route path="/PHome" element={<PHome/>} />
+          <Route path="/Houzz" element={<Houzz/>} />
+
 
 
  

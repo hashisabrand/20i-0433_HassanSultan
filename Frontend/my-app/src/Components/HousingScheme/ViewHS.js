@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 
 const ViewHousingScheme = () => {
     const [housingSchemes, setHousingSchemes] = useState([]);
+    const navigate=useNavigate()
     
     // Function to get all housing schemes
     const getAllHousingSchemes = async () => {
@@ -65,9 +66,11 @@ const ViewHousingScheme = () => {
                 <div className="card-body">
      
                   <h5 className="card-title">{housingScheme.Title} </h5>
+                  <p className="card-text">{"Price $ "+housingScheme.Price}</p>
                   <p className="card-text">{housingScheme.description}</p>
                   <p className="card-text">{housingScheme.City}</p>
-                  <Link to={`/agents/${housingScheme._id}`} className="btn btn-primary">View Agent</Link>
+                  <Link to={`/agents/${housingScheme._id}`} className="btn btn-primary">View Insurance Plans</Link>
+                  <button onClick={()=>{navigate('/Downpayment',{state:{Price:housingScheme.Price}})}}>Pay Down Payment</button>
                 </div>
               </div>
             </div>

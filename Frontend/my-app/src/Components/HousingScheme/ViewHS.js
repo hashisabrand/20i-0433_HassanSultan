@@ -69,7 +69,7 @@ const ViewHousingScheme = () => {
                   <p className="card-text">{"Price $ "+housingScheme.Price}</p>
                   <p className="card-text">{housingScheme.description}</p>
                   <p className="card-text">{housingScheme.City}</p>
-                  <Link to={`/agents/${housingScheme._id}`} className="btn btn-primary">View Insurance Plans</Link>
+                  <Link to={`/insurance`} className="btn btn-primary">View Insurance Plans</Link>
                   <button onClick={()=>{navigate('/Downpayment',{state:{Price:housingScheme.Price}})}}>Pay Down Payment</button>
                 </div>
               </div>

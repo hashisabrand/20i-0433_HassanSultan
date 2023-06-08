@@ -80,7 +80,7 @@ app.get("/get-plans", async (req, res) => {
 app.use(express.static(path.join(__dirname, "../Frontend/my-app/build")));
 app.get("*", function (_, res) {
   res.sendFile(
-    path.join(__dirname, "../Frontend/my-app/build/index.html"),
+    path.join(__dirname, "../Frontend/my-app/build"),
     function (err) {
       res.status(500).send(err);
     }
